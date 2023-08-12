@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pydeck as pdk
 import plotly.express as px
-import locale
+# import locale
 df_jp_ind = pd.read_csv('data/雇用_医療福祉_一人当たり賃金_全国_全産業.csv',encoding='shift_jis')
 df_jp_category = pd.read_csv('data/雇用_医療福祉_一人当たり賃金_全国_大分類.csv',encoding='shift_jis')
 df_pref_ind = pd.read_csv('data/雇用_医療福祉_一人当たり賃金_都道府県_全産業.csv',encoding='shift_jis')
@@ -66,7 +66,7 @@ if show_df == True:
 st.subheader('◾️１人あたり賃金の推移（折れ線グラフ）')
 
 # ロケールを設定（英語ロケールを使用）
-locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
+# locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 
 # データフレームの各カラムからカンマを取り除く
 df_jp_ind['集計年'] = df_jp_ind['集計年'].astype(str).replace(',', '')
