@@ -5,18 +5,17 @@ import matplotlib.pyplot as plt
 import pydeck as pdk
 import plotly.express as px
 import locale
-
-df_jp_ind = pd.read_csv('/Users/orfevre/Desktop/streamlit_app/data/雇用_医療福祉_一人当たり賃金_全国_全産業.csv',encoding='shift_jis')
-df_jp_category = pd.read_csv('/Users/orfevre/Desktop/streamlit_app/data/雇用_医療福祉_一人当たり賃金_全国_大分類.csv',encoding='shift_jis')
-df_pref_ind = pd.read_csv('/Users/orfevre/Desktop/streamlit_app/data/雇用_医療福祉_一人当たり賃金_都道府県_全産業.csv',encoding='shift_jis')
-df_pref_category = pd.read_csv('/Users/orfevre/Desktop/streamlit_app/data/雇用_医療福祉_一人当たり賃金_都道府県_大分類.csv',encoding='shift_jis')
+df_jp_ind = pd.read_csv('data/雇用_医療福祉_一人当たり賃金_全国_全産業.csv',encoding='shift_jis')
+df_jp_category = pd.read_csv('data/雇用_医療福祉_一人当たり賃金_全国_大分類.csv',encoding='shift_jis')
+df_pref_ind = pd.read_csv('data/雇用_医療福祉_一人当たり賃金_都道府県_全産業.csv',encoding='shift_jis')
+df_pref_category = pd.read_csv('data/雇用_医療福祉_一人当たり賃金_都道府県_大分類.csv',encoding='shift_jis')
 
 st.title('日本の賃金ダッシュボード')
 
 
 st.subheader('◾2019年　１人あたり賃金ヒートマップ')
 
-jp_lat_lon = pd.read_csv('/Users/orfevre/Desktop/streamlit_app/data/pref_lat_lon.csv')
+jp_lat_lon = pd.read_csv('data/pref_lat_lon.csv')
 jp_lat_lon = jp_lat_lon.rename(columns={'pref_name':'都道府県名'})
 
 # df_jp_indを条件抽出する（年齢ごと＋集計年）
